@@ -12,7 +12,6 @@ def consolidate_cart(cart)
       consolidatedCart[currentVegetable][:count] = 1
     end
   end
-  puts consolidatedCart
   return consolidatedCart
 end
 
