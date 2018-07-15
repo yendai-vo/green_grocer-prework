@@ -43,7 +43,7 @@ end
 
 def apply_clearance(cart)
   # code here
-  puts cart
+  # puts cart
   cart.transform_values do |values|
     # return values
     return {:price=> 1, :clearance=> 1, :count=>1}
@@ -53,6 +53,8 @@ def apply_clearance(cart)
     #   :count => values[:count]
     # }
   end
+  puts cart
+  return cart
 end
 
 def checkout(cart, coupons)
