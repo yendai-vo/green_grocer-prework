@@ -47,7 +47,7 @@ def apply_clearance(cart)
   cart.map do |vegetable, details|
     return {
       vegetable => {
-        :price => details[:clearance] ? details[:price] *.8 : details[:price],
+        :price => details[:clearance] ? details[:price] * .8 : details[:price],
         :clearance => details[:clearnce],
         :count => details[:count]
       }
