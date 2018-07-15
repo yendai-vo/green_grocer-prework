@@ -4,7 +4,7 @@ def consolidate_cart(cart)
 
   cart.each do |vegetable, details|
     consolidatedCart[vegetable] = details
-    consolidatedCart[vegetable][:count] = 1
+    consolidatedCart[vegetable].merge({:count => 1})
   end
   puts consolidatedCart
   return consolidatedCart
