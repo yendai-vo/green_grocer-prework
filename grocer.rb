@@ -16,14 +16,8 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  puts cart
-  puts coupons
-  # code here
-  # puts coupons
-  # puts coupons[:item]
   cartWithCoupons = {}
   cart.each do |vegetable, details |
-    # if coupon matches vegetable: remove count and add that to name + coupon and set the count to the result of the division
     coupons.each do |coupon|
       if vegetable == coupon[:item]
         couponNumber = details[:count]/coupon[:num]
