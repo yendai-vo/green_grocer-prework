@@ -17,6 +17,7 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
+  puts coupons
   cartWithCoupons = {}
   cart.each do |vegetable, details |
     # if coupon matches vegetable: remove count and add that to name + coupon and set the count to the result of the division
