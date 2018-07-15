@@ -42,8 +42,8 @@ def apply_coupons(cart, coupons)
             :count => nonCouponNumber
           }
         # end
-      else
-        cartWithCoupons[vegetable] = details
+      # else
+        # cartWithCoupons[vegetable] = details
       end
     end
     # if vegetable == coupons[:item]
