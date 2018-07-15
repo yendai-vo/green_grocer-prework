@@ -46,7 +46,7 @@ def apply_clearance(cart)
 
   cart.each do |k, v|
     newCart[:k] = {
-      :price=> v[:clearance] ? v[:price] * 0.8 : v[:price],
+      :price=> v[:clearance] ? v[:price] - (v[:price]*0.2): v[:price],
       :clearance=> v[:clearance],
       :count=> v[:count]
     }
