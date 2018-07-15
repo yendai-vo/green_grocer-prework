@@ -16,6 +16,8 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
+  puts cart
+  puts coupons
   # code here
   # puts coupons
   # puts coupons[:item]
