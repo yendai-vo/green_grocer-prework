@@ -45,11 +45,12 @@ def apply_clearance(cart)
   # code here
   puts cart
   cart.transform_values do |values|
-    {
-      :price => values[:clearance] ? values[:price] * .8 : values[:price],
-      :clearance => values[:clearance],
-      :count => values[:count]
-    }
+    return values;
+    # {
+    #   :price => values[:clearance] ? values[:price] * .8 : values[:price],
+    #   :clearance => values[:clearance],
+    #   :count => values[:count]
+    # }
   end
 end
 
