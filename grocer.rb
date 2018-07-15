@@ -5,8 +5,8 @@ def consolidate_cart(cart)
   cart.each do |vegetable, details|
     consolidatedCart[vegetable] = details
   end
-
-  return consolidate_cart
+  puts consolidatedCart
+  return consolidatedCart
 end
 
 def apply_coupons(cart, coupons)
