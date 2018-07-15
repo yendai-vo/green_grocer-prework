@@ -18,7 +18,31 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-  consolidatedCart = consolidate_cart(cart: cart)
+  cartWithCoupons = {}
+  cart.each do |vegetable, details |
+    # if coupon matches vegetable: remove count and add that to name + coupon and set the count to the result of the division
+    if vegetable == coupon[:item]
+      couponNumber = details[:count]/coupon[:num]
+      nonCouponNumber = details[:count]%coupon[:num]
+      if couponNumber > 0
+        cartWithCoupons["#{vegetable} W/COUPON"] = {
+          :price => coupon[:cost], 
+          :clearance => details[:clearance],
+          :count => couponNumber
+        }
+      end
+      if nonCouponNumber > 0
+        cartWithCoupons[vegetable] = {
+          :price => details[:price], 
+          :clearance => details[:clearance],
+          :count => nonCouponNumber
+        }
+      end
+    else
+      cartWithCoupons[vegetable] = details
+    end
+  end
+  return cartWithCoupons
 end
 
 def apply_clearance(cart)
