@@ -42,7 +42,7 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  cart.merge do |k, v|
+  cart.merge(cart) do |k, v|
     v
   end
   puts cart
