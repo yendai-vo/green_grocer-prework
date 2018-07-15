@@ -43,6 +43,10 @@ def apply_coupons(cart, coupons)
       end
     end
   end
+
+  if coupons.length == 0
+    cartWithCoupons = cart
+  end
   puts cartWithCoupons
   return cartWithCoupons
 end
