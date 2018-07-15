@@ -21,12 +21,12 @@ def apply_coupons(cart, coupons)
   cartWithCoupons = {}
   cart.each do |vegetable, details |
     # if coupon matches vegetable: remove count and add that to name + coupon and set the count to the result of the division
-    if vegetable == coupon[:item]
-      couponNumber = details[:count]/coupon[:num]
-      nonCouponNumber = details[:count]%coupon[:num]
+    if vegetable == coupons[:item]
+      couponNumber = details[:count]/coupons[:num]
+      nonCouponNumber = details[:count]%coupons[:num]
       if couponNumber > 0
         cartWithCoupons["#{vegetable} W/COUPON"] = {
-          :price => coupon[:cost],
+          :price => coupons[:cost],
           :clearance => details[:clearance],
           :count => couponNumber
         }
