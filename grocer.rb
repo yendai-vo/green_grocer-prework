@@ -26,14 +26,14 @@ def apply_coupons(cart, coupons)
       nonCouponNumber = details[:count]%coupon[:num]
       if couponNumber > 0
         cartWithCoupons["#{vegetable} W/COUPON"] = {
-          :price => coupon[:cost], 
+          :price => coupon[:cost],
           :clearance => details[:clearance],
           :count => couponNumber
         }
       end
       if nonCouponNumber > 0
         cartWithCoupons[vegetable] = {
-          :price => details[:price], 
+          :price => details[:price],
           :clearance => details[:clearance],
           :count => nonCouponNumber
         }
@@ -42,6 +42,7 @@ def apply_coupons(cart, coupons)
       cartWithCoupons[vegetable] = details
     end
   end
+  puts cartWithCoupons
   return cartWithCoupons
 end
 
