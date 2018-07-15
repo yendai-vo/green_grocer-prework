@@ -42,15 +42,17 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  cart.merge(cart) do |k, v|
-    {
+  newCart = {}
+
+  cart.each do |k, v| 
+    newCart[:k] = {
       :price=> v[:clearance] ? v[:price] * 0.8 : v[:price],
       :clearance=> v[:clearance],
       :count=> v[:count]
     }
   end
-  puts cart
-  return cart
+  puts newCart
+  return newCart
 end
 
 def checkout(cart, coupons)
