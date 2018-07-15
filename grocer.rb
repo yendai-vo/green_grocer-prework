@@ -42,8 +42,6 @@ def apply_coupons(cart, coupons)
         }
       end
     end
-  else
-    # cartWithCoupons[vegetable] = details
   end
   puts cartWithCoupons
   return cartWithCoupons
