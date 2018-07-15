@@ -64,7 +64,7 @@ def checkout(cart, coupons)
   superCart.each do |_, v|
     total += v[:price] * v[:count]
   end
-
+  total = total - total*0.1 if total > 100
   puts total
   return total
 end
