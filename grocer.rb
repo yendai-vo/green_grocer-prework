@@ -33,13 +33,13 @@ def apply_coupons(cart, coupons)
             :count => couponNumber
           }
         end
-        if nonCouponNumber > 0
+        # if nonCouponNumber > 0
           cartWithCoupons[vegetable] = {
             :price => details[:price],
             :clearance => details[:clearance],
             :count => nonCouponNumber
           }
-        end
+        # end
       else
         cartWithCoupons[vegetable] = details
       end
