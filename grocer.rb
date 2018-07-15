@@ -63,4 +63,7 @@ def checkout(cart, coupons)
   consolidatedCart.each do |_, v|
     total += v[:price] * v[:count]
   end
+
+  puts total
+  return total
 end
