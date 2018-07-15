@@ -43,7 +43,6 @@ end
 
 def apply_clearance(cart)
   newCart = {}
-
   cart.each do |k, v|
     newCart[k] = {
       :price=> v[:clearance] ? v[:price] - (v[:price]*0.2) : v[:price],
@@ -51,12 +50,10 @@ def apply_clearance(cart)
       :count=> v[:count]
     }
   end
-  puts newCart
   return newCart
 end
 
 def checkout(cart, coupons)
-  # code here
   total = 0
   superCart = consolidate_cart(cart)
   superCart = apply_coupons(superCart, coupons)
@@ -65,6 +62,5 @@ def checkout(cart, coupons)
     total += v[:price] * v[:count]
   end
   total = total - total*0.1 if total > 100
-  puts total
   return total
 end
