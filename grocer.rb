@@ -7,7 +7,7 @@ def consolidate_cart(cart)
     currentVegetableDetails = vegetableHash.values[0]
     if consolidatedCart[currentVegetable]
       consolidatedCart[currentVegetable][:count] +=1
-    else 
+    else
       consolidatedCart[currentVegetable] = currentVegetableDetails
       consolidate_cart[currentVegetable][:count] = 1
     end
