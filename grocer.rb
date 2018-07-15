@@ -9,7 +9,7 @@ def consolidate_cart(cart)
       consolidatedCart[currentVegetable][:count] +=1
     else
       consolidatedCart[currentVegetable] = currentVegetableDetails
-      consolidate_cart[currentVegetable][:count] = 1
+      consolidatedCart[currentVegetable][:count] = 1
     end
   end
   puts consolidatedCart
