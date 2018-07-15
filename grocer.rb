@@ -42,19 +42,11 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  # code here
-  # puts cart
-  something = cart.transform_values do |values|
-    # return values
-    return {:price=> 1, :clearance=> 1, :count=>1}
-    # {
-    #   :price => values[:clearance] ? values[:price] * .8 : values[:price],
-    #   :clearance => values[:clearance],
-    #   :count => values[:count]
-    # }
+  cart.merge do |key, values|
+    return values
   end
-  puts something
-  return something
+  puts cart
+  return cart
 end
 
 def checkout(cart, coupons)
