@@ -58,9 +58,10 @@ end
 def checkout(cart, coupons)
   # code here
   total = 0
-  consolidatedCart = consolidate_cart(cart)
-  cartWithCoupons = apply_coupons(consolidatedCart, coupons)
-  cartWithCoupons.each do |_, v|
+  superCart = consolidate_cart(cart)
+  superCart = apply_coupons(superCart, coupons)
+  superCart = apply_clearance(superCart)
+  superCart.each do |_, v|
     total += v[:price] * v[:count]
   end
 
