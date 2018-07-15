@@ -36,6 +36,7 @@ def apply_coupons(cart, coupons)
         }
       end
     end
+    cartWithCoupons[vegetable] ||= details
   end
 
   if coupons.length == 0
