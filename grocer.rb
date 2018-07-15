@@ -44,7 +44,7 @@ end
 def apply_clearance(cart)
   cart.merge(cart) do |k, v|
     {
-      :price=> v[:clearance] ? v[:price] * .8 : v[:price],
+      :price=> v[:clearance] ? v[:price] * 0.8 : v[:price],
       :clearance=> v[:clearance],
       :count=> v[:count]
     }
